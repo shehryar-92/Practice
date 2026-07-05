@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Snap — Encode anything</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="sheet">
+
+    <header class="sheet-header">
+      <p class="eyebrow">FIG. 01 — OPTICAL ENCODER</p>
+      <h1 class="title">QR SNAP</h1>
+    </header>
+
+    <section class="input-row">
+      <label class="field-label" for="text-input">TEXT OR URL</label>
+      <div class="field-wrap">
+        <input
+          id="text-input"
+          type="text"
+          placeholder="https://github.com/your-username"
+          autocomplete="off"
+          spellcheck="false"
+        >
+        <button id="copy-btn" class="icon-btn" title="Copy input text" aria-label="Copy input text">
+          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 9h10v10H9z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5 15V5h10" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        </button>
+      </div>
+      <p class="char-count"><span id="char-count">0</span> / 2900 chars</p>
+    </section>
+
+    <button id="generate-btn" class="generate-btn" disabled>GENERATE</button>
+
+    <p id="error-msg" class="error-msg" hidden></p>
+
+    <section class="viewport" id="viewport">
+      <span class="reg-mark reg-tl" aria-hidden="true"></span>
+      <span class="reg-mark reg-tr" aria-hidden="true"></span>
+      <span class="reg-mark reg-bl" aria-hidden="true"></span>
+      <span class="reg-mark reg-br" aria-hidden="true"></span>
+
+      <div class="scan-sweep" id="scan-sweep" aria-hidden="true"></div>
+
+      <div id="qr-canvas-holder" class="qr-canvas-holder">
+        <p class="empty-state">AWAITING INPUT —<br>ENTER TEXT ABOVE TO ENCODE</p>
+      </div>
+    </section>
+
+    <p class="echo-text" id="echo-text" hidden></p>
+
+    <footer class="title-block">
+      <div class="tb-cell">
+        <span class="tb-label">FORMAT</span>
+        <span class="tb-value">PNG</span>
+      </div>
+      <div class="tb-cell">
+        <span class="tb-label">SIZE</span>
+        <span class="tb-value" id="size-value">512×512</span>
+      </div>
+      <div class="tb-cell">
+        <span class="tb-label">EC LEVEL</span>
+        <span class="tb-value">H</span>
+      </div>
+      <button id="download-btn" class="download-btn" disabled>
+        ↓ DOWNLOAD
+      </button>
+    </footer>
+
+  </main>
+
+  <p class="toast" id="toast" hidden></p>
+
+  <script src="lib/qrcode.min.js"></script>
+  <script src="url-helper.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
