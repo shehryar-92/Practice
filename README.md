@@ -2,9 +2,6 @@
 
 Type text or a URL, get a scannable QR code instantly. No build step, no backend, no dependencies to install.
 
-![QR Snap screenshot](screenshot.png)
-<!-- Replace with an actual screenshot after running locally -->
-
 ## Features
 - Type any text or URL and generate a QR code on the fly
 - Live character counter with a 2900-char safety limit
@@ -16,8 +13,8 @@ Type text or a URL, get a scannable QR code instantly. No build step, no backend
 No install needed — it's plain HTML/CSS/JS.
 
 ```bash
-git clone https://github.com/your-username/qr-snap.git
-cd qr-snap
+git clone https://github.com/shehryar-92/Practice.git
+cd practice
 open index.html   # or just double-click the file
 ```
 
